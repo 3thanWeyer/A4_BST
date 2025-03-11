@@ -83,9 +83,9 @@ int BST::countPlanes(reservation *node, int t) {
     if (node->left != nullptr) {
       leftsize = node->left->subtreeSize;
     }
-    return leftsize + 1 + countPlanes(node->right, t);
+    return leftsize + countPlanes(node->right, t) + 1;
   }
-  return countPlanes(node->left, t);
+  return countPlanes(node->left, t) + 1;
 }
 
 void BST::inorder(reservation *root) {
